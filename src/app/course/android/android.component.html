@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class="input-group">
+        <input type="hidden" name="search_param" value="all" id="search_param">
+        <input type="text" #postId class="form-control" name="x" placeholder="Search By PostId...">
+        <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" (click)="getPostsById(postId.value)"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+      </div>
+      </div>
+    <br>
+    <ul>
+      <li *ngFor="let c of newComments">{{c.email}}</li>
+    </ul>
+  </div>
+</div>
+

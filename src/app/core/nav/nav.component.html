@@ -1,0 +1,26 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">MyApp</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a routerLink="/android">Android</a></li>
+      <li><a routerLink="/ios">iOS</a></li>
+     <!-- <li><a routerLink="/java">Java</a></li>-->
+      <li><a [routerLink]="['/java',{outlets:{'List':['javaList'],'Detail':['none']}}]">Java</a></li>
+      <!--[routerLink]="['/speakers', {outlets: {'list': ['speakersList'], 'bio': ['none']}}]">-->
+
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <ng-template [ngIf]="!auth.isAuthenticated()">
+        <li><a routerLink="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a routerLink="/login" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ng-template>
+      <li *ngIf="auth.isAuthenticated()" (click)=" logout()"><a routerLink="/" ><span class="glyphicon glyphicon-log-out"></span>LogOut</a></li>
+    </ul>
+
+  </div>
+</nav>
+

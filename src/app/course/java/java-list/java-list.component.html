@@ -1,0 +1,8 @@
+<div >
+  <ul  >
+    <li *ngFor="let d of data" (click)="getDetail(d.id)" [class.active]="clicked === d"
+        (click)="clicked = d">
+      <a >{{d.name}}</a>
+    </li>
+  </ul>
+</div>

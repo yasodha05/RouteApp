@@ -1,0 +1,9 @@
+.jList{
+ width: 40%;
+border: 2px solid black;
+}
+
+.active a
+{
+  color:black;
+}

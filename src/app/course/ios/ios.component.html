@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+  <div class="panel-heading">About Ios</div>
+  <div class="panel-body"><span>Learn Ios with in-depth courses and gain a deep understanding of how to build,
+      deploy and scale programs in Swift for almost any application.
+      View Ios tutorials that will help take your skillset to the next level in this widely
+      utilized and useful language.</span></div>
+</div>
+
+<button (click)="getPosts()">Get Posts</button>
+<br>
+
+<ul>
+  <li *ngFor="let p of posts">
+    <a [routerLink]="[p.id]">{{p.body}}</a>
+  </li>
+</ul>
+
+
+
+
+<!--<router-outlet></router-outlet>-->

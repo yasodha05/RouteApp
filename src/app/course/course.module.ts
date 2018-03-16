@@ -7,6 +7,7 @@ import { JavaComponent } from './java/java.component';
 import {JavaListComponent} from './java/java-list/java-list.component';
 import {JavaDetailComponent} from './java/java-detail/java-detail.component';
 import { IosDetailComponent } from './ios/ios-detail/ios-detail.component';
+import { RegisterCourseComponent } from './register-course/register-course.component';
 
 
 @NgModule({
@@ -14,7 +15,7 @@ import { IosDetailComponent } from './ios/ios-detail/ios-detail.component';
     CommonModule,
     CourseRoutingModule
   ],
-  declarations: [IosComponent, AndroidComponent, JavaComponent, JavaDetailComponent, JavaListComponent, IosDetailComponent],
+  declarations: [IosComponent, AndroidComponent, JavaComponent, JavaDetailComponent, JavaListComponent, IosDetailComponent, RegisterCourseComponent],
   exports:[IosComponent, AndroidComponent, JavaComponent, JavaListComponent, JavaDetailComponent]
 })
 export class CourseModule { }

@@ -11,7 +11,7 @@ import 'rxjs/add/operator/filter';
 })
 export class AndroidComponent implements OnInit {
   userArray:Array<Post>;
-  comments:Array<Comment>;
+  comments:Comment[];
   newComments:Array<Comment>;
   constructor(private ios:IosService) { }
 
@@ -22,7 +22,7 @@ export class AndroidComponent implements OnInit {
         console.log(this.comments);
       }
     );
-  }
+   }
   getPostsById(postId) {
     this.newComments = this.comments.filter( c => c.postId == postId);
  /*  this.ios.getComments(postId);*/

@@ -9,9 +9,11 @@ import {AuthService} from '../../auth/auth.service';
 })
 export class NavComponent implements OnInit {
 
+  CourseCount:number;
   constructor(private router: Router, private auth:AuthService) { }
 
   ngOnInit() {
+    this.CourseCount = 0;
   }
   logout()  {
     this.auth.onLogout();

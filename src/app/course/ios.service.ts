@@ -6,6 +6,8 @@ import {Observable} from 'rxjs/Observable';
 import {AsyncLocalStorage} from 'angular-async-local-storage';
 
 import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/operator/concatMap';
+import 'rxjs/add/observable/from';
 
 @Injectable()
 export class IosService {
@@ -19,9 +21,9 @@ export class IosService {
  }
 
   getComments() {
-    this.comments = this.http.get('https://jsonplaceholder.typicode.com/comments',
+    this.comments = this.http.get<Comment[]>('https://jsonplaceholder.typicode.com/comments',
       { observe: 'body', responseType:'json'});
-        console.log(this.comments);
+       console.log(this.comments);
         return this.comments;
   }
 

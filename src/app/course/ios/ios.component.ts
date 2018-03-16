@@ -12,12 +12,11 @@ import {AsyncLocalStorage} from 'angular-async-local-storage';
 export class IosComponent implements OnInit , OnDestroy {
   posts:Post[];
   constructor(private ios:IosService, private ar:ActivatedRoute,
-              private localStorage: AsyncLocalStorage) {
-   this.localStorage.getItem('posts').subscribe(
-     posts => this.posts = posts );
-   }
+              private localStorage: AsyncLocalStorage) {   }
 
-  ngOnInit() {  }
+  ngOnInit() {  this.localStorage.getItem('posts').subscribe(
+    posts => this.posts = posts );
+  }
   getPosts()  {
     this.ios.getData().subscribe(
       (res:any) => {

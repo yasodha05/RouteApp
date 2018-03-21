@@ -8,12 +8,15 @@ import {JavaListComponent} from './java/java-list/java-list.component';
 import {JavaDetailComponent} from './java/java-detail/java-detail.component';
 import { IosDetailComponent } from './ios/ios-detail/ios-detail.component';
 import { RegisterCourseComponent } from './register-course/register-course.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    CourseRoutingModule
+    CourseRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [IosComponent, AndroidComponent, JavaComponent, JavaDetailComponent, JavaListComponent, IosDetailComponent, RegisterCourseComponent],
   exports:[IosComponent, AndroidComponent, JavaComponent, JavaListComponent, JavaDetailComponent]

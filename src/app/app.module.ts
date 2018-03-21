@@ -18,6 +18,8 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AuthInterceptor} from './auth/auth-interceptor';
 import {IosService} from './course/ios.service';
 import {AsyncLocalStorageModule} from 'angular-async-local-storage';
+import {DeactivateGuardGuard} from './auth/deactivate-guard.guard';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 
@@ -27,6 +29,8 @@ import {AsyncLocalStorageModule} from 'angular-async-local-storage';
      ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AuthModule,
     CoreModule,
     HttpClientModule,
@@ -42,7 +46,7 @@ import {AsyncLocalStorageModule} from 'angular-async-local-storage';
     AngularFireAuthModule,
     StoreDevtoolsModule.instrument()
   ],
-  providers: [AuthService, AuthGuardService, IosService,
+  providers: [AuthService, AuthGuardService, IosService, DeactivateGuardGuard,
     JavaService,
     {provide:HTTP_INTERCEPTORS , useClass:AuthInterceptor , multi:true }],
   bootstrap: [AppComponent]

@@ -1,3 +1,26 @@
-<p>
-  register-course works!
-</p>
+<div class="panel-body">
+  <form [formGroup]="angForm" (submit)="addCourse(name.value, price.value)">
+    <div class="form-group">
+      <label class="col-md-4">Course Name</label>
+      <input type="text" class="form-control" formControlName="name" #name />
+    </div>
+    <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" class="alert alert-danger">
+      <div *ngIf="angForm.controls['name'].errors.required">
+        Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4">Course Price</label>
+      <input type="text" class="form-control" formControlName="price" #price/>
+    </div>
+    <div *ngIf="angForm.controls['price'].invalid && (angForm.controls['price'].dirty || angForm.controls['price'].touched)" class="alert alert-danger">
+      <div *ngIf="angForm.controls['price'].errors.required">
+        Price is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <button  [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Add</button>
+    </div>
+  </form>
+</div>
+

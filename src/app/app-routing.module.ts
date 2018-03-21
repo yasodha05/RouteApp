@@ -11,6 +11,7 @@ import {JavaListComponent} from './course/java/java-list/java-list.component';
 import {JavaDetailComponent} from './course/java/java-detail/java-detail.component';
 import {IosDetailComponent} from './course/ios/ios-detail/ios-detail.component';
 import {RegisterCourseComponent} from './course/register-course/register-course.component';
+import {DeactivateGuardGuard} from './auth/deactivate-guard.guard';
 
 
 const appRoutes: Routes = [
@@ -20,11 +21,12 @@ const appRoutes: Routes = [
   {path:'android', canActivate: [AuthGuardService], component:AndroidComponent},
   {path:'ios',  canActivate: [AuthGuardService], component:IosComponent},
   {path:'ios/:id', canActivateChild:[AuthGuardService], component:IosDetailComponent},
-      {path:'java',  component:JavaComponent, children:[
+      {path:'java',  component:JavaComponent,  children:[
       {path:'javaList', component:JavaListComponent, outlet:'List'},
       {path:':id', component:JavaDetailComponent , outlet:'Detail'}
     ]},
-  {path:'regCourse', component:RegisterCourseComponent , canActivate: [AuthGuardService]}
+  {path:'regCourse', component:RegisterCourseComponent ,
+    canDeactivate : [DeactivateGuardGuard]}
  ];
 
 @NgModule({
